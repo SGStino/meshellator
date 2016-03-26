@@ -12,6 +12,10 @@
     <AssemblyName>Meshellator</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -77,6 +82,7 @@
     <Compile Include="Importers\3ds\Vertex3ds.cs" />
     <Compile Include="Importers\3ds\XYZKey3ds.cs" />
     <Compile Include="Importers\3ds\XYZTrack3ds.cs" />
+    <Compile Include="Importers\Fbx\FbxImporter.cs" />
     <Compile Include="Importers\Obj\ObjImporter.cs" />
     <Compile Include="Importers\Obj\Objects\Face.cs" />
     <Compile Include="Importers\Obj\Objects\FaceType.cs" />
@@ -154,6 +160,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ManagedFBX\ManagedFbx\ManagedFbx.vcxproj">
+      <Project>{163d9b5e-1a69-4821-89de-298736f2c14e}</Project>
+      <Name>ManagedFbx</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
