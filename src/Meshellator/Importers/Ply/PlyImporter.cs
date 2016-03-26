@@ -8,7 +8,7 @@ namespace Meshellator.Importers.Ply
 	[AssetImporter(".ply", "Polygon File Format")]
 	public class PlyImporter : AssetImporterBase
 	{
-		public override Scene ImportFile(FileStream fileStream, string fileName)
+		public override Scene ImportFile(Lazy<Stream> fileStream, string fileName)
 		{
 			var scene = new Scene();
 			var mesh = new Mesh();

@@ -10,12 +10,12 @@ namespace Meshellator.Importers.Nff
 	[AssetImporter(".nff", "Neutral File Format")]
 	public class NffImporter : AssetImporterBase
 	{
-		public override Scene ImportFile(FileStream fileStream, string fileName)
+		public override Scene ImportFile(Lazy<Stream> fileStream, string fileName)
 		{
 			Scene scene = new Scene();
 
 			ParserContext parserContext = new ParserContext();
-			StreamReader reader = new StreamReader(fileName);
+			StreamReader reader = new StreamReader(fileStream.Value);
 			string currentLine;
 			while ((currentLine = reader.ReadLine()) != null)
 				ParseLine(parserContext, scene, currentLine);

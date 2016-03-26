@@ -146,7 +146,7 @@ namespace Meshellator.Importers.Autodesk3ds
 		 *                  DECODE_USED_PARAMS_AND_CHUNKS)
 		 * @ in case of I/O or parsing problems
 		 */
-		public Scene3ds(FileStream fileStream, TextDecode3ds decode, int level)
+		public Scene3ds(Stream fileStream, TextDecode3ds decode, int level)
 		{
 			if (decode != null)
 			{

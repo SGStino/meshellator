@@ -2,6 +2,7 @@ using System;
 using Nexus;
 using Nexus.Graphics.Transforms;
 using Nexus.Objects3D;
+using Nexus.Graphics.Colors;
 
 namespace Meshellator
 {
@@ -11,8 +12,13 @@ namespace Meshellator
 
 		public string Name { get; set; }
 		public Point3DCollection Positions { get; private set; }
-		public Vector3DCollection Normals { get; private set; }
-		public Point3DCollection TextureCoordinates { get; private set; }
+        public ColorFCollection Colors { get; private set; }
+
+        public Vector3DCollection Normals { get; private set; }
+        public Vector3DCollection Tangents { get; private set; }
+        public Vector3DCollection Bitangents { get; private set; }
+
+        public Point3DCollection TextureCoordinates { get; private set; }
 		public Int32Collection Indices { get; private set; }
 
 		public Transform3D Transform { get; set; }
@@ -38,9 +44,12 @@ namespace Meshellator
 
 		public Mesh()
 		{
+            Colors = new ColorFCollection();
 			Positions = new Point3DCollection();
 			Normals = new Vector3DCollection();
-			TextureCoordinates = new Point3DCollection();
+            Tangents = new Vector3DCollection();
+            Bitangents = new Vector3DCollection();
+            TextureCoordinates = new Point3DCollection();
 			Indices = new Int32Collection();
 			Transform = new MatrixTransform(Matrix3D.Identity);
 		}

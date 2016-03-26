@@ -47,6 +47,7 @@ namespace Meshellator.Importers.Obj.Objects
 			CalculateRadius();
 		}
 
+
 		private void CalculateRadius()
 		{
 			foreach (Vertex vertex in Vertices)

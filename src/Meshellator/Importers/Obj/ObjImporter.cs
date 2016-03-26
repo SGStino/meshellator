@@ -9,7 +9,7 @@ namespace Meshellator.Importers.Obj
 	[AssetImporter(".obj", "Lightwave OBJ")]
 	public class ObjImporter : AssetImporterBase
 	{
-		public override Scene ImportFile(FileStream fileStream, string fileName)
+		public override Scene ImportFile(Lazy<Stream> fileStream, string fileName)
 		{
 			WavefrontObject wavefrontObject = WavefrontObject.Load(fileName);
 

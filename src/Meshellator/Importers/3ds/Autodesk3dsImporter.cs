@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using Nexus;
 using Nexus.Graphics.Colors;
+using System;
 
 namespace Meshellator.Importers.Autodesk3ds
 {
@@ -12,9 +13,11 @@ namespace Meshellator.Importers.Autodesk3ds
 		private const bool FLIPYZ = false;
 		private const bool FLIPV = true;
 
-		public override Scene ImportFile(FileStream fileStream, string fileName)
+		public override Scene ImportFile(Lazy<Stream> streamSource, string fileName)
 		{
-			Scene3ds scene3ds = new Scene3ds(fileStream, null, Scene3ds.DECODE_ALL);
+            var dataStream = streamSource.Value;
+
+			Scene3ds scene3ds = new Scene3ds(dataStream, null, Scene3ds.DECODE_ALL);
 
 			Scene result = new Scene();
 
